@@ -1,0 +1,50 @@
+*{box-sizing:border-box}
+:root{--bg:#2b7dc0;--ink:#000000;--muted:#081bae;--brand:#142aa8;--soft:#f9f9f9;--card:#0920ce8a;--line:#c9d9d4}
+body{margin:0;font:1rem/1.65 "Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--ink)}
+main{max-width:64rem;margin:0 auto;padding:2rem 1.25rem 3rem}
+h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.15;margin:.5rem 0 1rem}
+.lead{font-size:1.15rem;color:var(--muted);max-width:40rem}
+a{color:var(--brand)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+
+/* Header and menu */
+.top{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;padding:.9rem 1.25rem;border-bottom:1px solid var(--line);background:var(--card);position:sticky;top:0}
+nav{display:flex;gap:.25rem;flex-wrap:wrap}
+nav a{padding:.4rem .8rem;border-radius:.4rem;text-decoration:none;color:var(--ink)}
+nav a:hover{background:var(--soft)}
+nav a[aria-current=page]{background:var(--brand);color:#fff}
+#menu{display:none}
+button{font:inherit;cursor:pointer;padding:.45rem .9rem;border-radius:.4rem;border:1px solid var(--brand);background:transparent;color:var(--brand)}
+button:hover{background:var(--brand);color:#fff}
+
+/* Homepage */
+.hero{padding:3rem 0 2rem}
+.grid,.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem}
+.tile{display:block;padding:1.5rem;background:var(--soft);border-left:6px solid var(--brand);border-radius:.3rem;text-decoration:none;color:var(--ink)}
+.tile h2{margin:0 0 .3rem}
+.tile:hover{background:var(--line)}
+
+/* Photos, profile and hometown layout */
+.split{display:grid;grid-template-columns:minmax(0,18rem) 1fr;gap:2rem;align-items:start}
+.photo{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:.4rem;display:block}
+.photo.small{aspect-ratio:16/10;margin-bottom:.8rem}
+dl{display:grid;grid-template-columns:9rem 1fr;gap:.4rem 1rem}
+dt{font-weight:600}dd{margin:0}
+.intro{font-size:1.4rem;font-weight:600}
+
+/* Cards (food, tourist, songs) */
+.card{background:var(--card);border:1px solid var(--line);border-radius:.4rem;padding:1rem}
+.card h3{margin:.2rem 0}.card p{margin:.2rem 0 .6rem;color:var(--muted)}
+
+/* Dog and song pages */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+img.teenage{width:300px;aspect-ratio:18/16;object-fit:fill}
+img.SongSize{width:300px;aspect-ratio:1/1;object-fit:fill}
+
+/* Page title bar */
+.TopLeftPartIdk{background:#000000;color:#fff;padding:.4rem 1rem;border-radius:.4rem}
+
+footer{padding:1.5rem;text-align:center;color:var(--muted);border-top:1px solid var(--line)}
+
+/* Phones */
+@media(max-width:640px){#menu{display:block}nav{display:none;width:100%;flex-direction:column}nav.open{display:flex}.split{grid-template-columns:1fr}dl{grid-template-columns:1fr}}
